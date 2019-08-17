@@ -1,0 +1,56 @@
+<!DOCTYPE HTML> 
+<html> 
+<head> 
+<style> 
+body{
+background-color:black;
+}
+p { 
+  text-align: center; 
+  font-size: 100px; 
+} 
+.glow {
+  font-size: 80px;
+  color: #fff;
+  text-align: center;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
+</style> 
+</head> 
+<body> 
+<h1 style="color:white; background-color:blue;"> Day(D), Hour(H), Minute(M), Second(S)...</h1>
+<img src="https://i.imgur.com/XlO32Rg.png"/>
+<h1 class="glow">POOJA JI</h1>
+<p id="demo" class="glow"></p> 
+<script> 
+var deadline = new Date("Aug 21, 2019 00:00:00").getTime(); 
+var x = setInterval(function() { 
+var now = new Date().getTime(); 
+var t = deadline - now; 
+var days = Math.floor(t / (1000 * 60 * 60 * 24)); 
+var hours = Math.floor((t%(1000 * 60 * 60 * 24))/(1000 * 60 * 60)); 
+var minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60)); 
+var seconds = Math.floor((t % (1000 * 60)) / 1000); 
+document.getElementById("demo").innerHTML = days + "d "  
++ hours + "h " + minutes + "m " + seconds + "s "; 
+    if (t < 0) { 
+        clearInterval(x); 
+        document.getElementById("demo").innerHTML ="HAPPY BIRTHDAY POOJA JI"; 
+    } 
+}, 1000); 
+</script> 
+  
+</body> 
+</html> 
